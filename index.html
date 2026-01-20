@@ -16,11 +16,11 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1444884443747226');
+    fbq('init', '144488443747226');
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1444884443747226&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=144488443747226&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
     
@@ -86,7 +86,8 @@
                 <a href="#beneficios" class="text-argentina-gris hover:text-argentina-azul transition-colors">Beneficios</a>
                 <a href="#regulaciones" class="text-argentina-gris hover:text-argentina-azul transition-colors">Regulaciones</a>
                 <a href="#faq" class="text-argentina-gris hover:text-argentina-azul transition-colors">FAQ</a>
-                <a href="#contacto" class="bg-whatsapp-green text-white px-5 py-2 rounded-lg btn-hover">Contacto WhatsApp</a>
+                <!-- 导航栏联系按钮 - 添加ID和事件 -->
+                <a id="contactButtonNav" href="#contacto" class="bg-whatsapp-green text-white px-5 py-2 rounded-lg btn-hover">Contacto WhatsApp</a>
             </nav>
             
             <!-- Botón Menú Móvil -->
@@ -102,7 +103,8 @@
                 <a href="#beneficios" class="text-argentina-gris hover:text-argentina-azul py-2 border-b border-gray-100">Beneficios</a>
                 <a href="#regulaciones" class="text-argentina-gris hover:text-argentina-azul py-2 border-b border-gray-100">Regulaciones</a>
                 <a href="#faq" class="text-argentina-gris hover:text-argentina-azul py-2 border-b border-gray-100">FAQ</a>
-                <a href="#contacto" class="bg-whatsapp-green text-white px-5 py-2 rounded-lg text-center btn-hover">Contacto WhatsApp</a>
+                <!-- 移动端导航联系按钮 - 添加ID和事件 -->
+                <a id="contactButtonMobile" href="#contacto" class="bg-whatsapp-green text-white px-5 py-2 rounded-lg text-center btn-hover">Contacto WhatsApp</a>
             </div>
         </div>
     </header>
@@ -119,8 +121,8 @@
                     Descubre cómo las criptomonedas están transformando el panorama financiero argentino, ofreciendo alternativas seguras y eficientes en un mercado en constante evolución.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <!-- WhatsApp按钮 -->
-                    <a href="https://wa.me/5491112345678" target="_blank" class="bg-whatsapp-green text-white px-6 py-3 rounded-lg font-medium btn-hover" onclick="fbq('track', 'Click_to_WhatsApp');">
+                    <!-- Hero区WhatsApp按钮 - 添加ID和事件 -->
+                    <a id="contactButtonHero" href="https://wa.me/5491112345678" target="_blank" class="bg-whatsapp-green text-white px-6 py-3 rounded-lg font-medium btn-hover">
                         <i class="fa-brands fa-whatsapp mr-2"></i> Si estás interesado, contacta mi WhatsApp
                     </a>
                 </div>
@@ -300,7 +302,8 @@
                 <p class="text-gray-600 text-center mb-8">
                     ¡Estoy aquí para resolver todas tus dudas sobre criptomonedas en Argentina!
                 </p>
-                <a href="https://wa.me/5491112345678" target="_blank" class="w-full bg-whatsapp-green text-white py-4 rounded-lg font-medium text-lg btn-hover flex items-center justify-center gap-2" onclick="fbq('track', 'Contact_WhatsApp');">
+                <!-- Contacto区WhatsApp按钮 - 添加ID和事件 -->
+                <a id="contactButtonMain" href="https://wa.me/5491112345678" target="_blank" class="w-full bg-whatsapp-green text-white py-4 rounded-lg font-medium text-lg btn-hover flex items-center justify-center gap-2">
                     <i class="fa-brands fa-whatsapp text-xl"></i>
                     Enviar mensaje por WhatsApp
                 </a>
@@ -325,7 +328,8 @@
                     <a href="#" class="text-white/70 hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
                     <a href="#" class="text-white/70 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" class="text-white/70 hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://wa.me/5491112345678" target="_blank" class="text-white/70 hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    <!-- 页脚WhatsApp图标 - 添加ID和事件 -->
+                    <a id="contactButtonFooter" href="https://wa.me/5491112345678" target="_blank" class="text-white/70 hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
                 
                 <div class="text-white/70 text-sm">
@@ -417,6 +421,53 @@
                 header.classList.remove('py-2');
             }
         });
+
+        // 统一的联系按钮点击事件处理
+        // 为所有联系按钮添加点击事件监听
+        function setupContactButtonEvents() {
+            // 获取所有联系按钮元素
+            const contactButtons = [
+                document.getElementById('contactButtonNav'),
+                document.getElementById('contactButtonMobile'),
+                document.getElementById('contactButtonHero'),
+                document.getElementById('contactButtonMain'),
+                document.getElementById('contactButtonFooter')
+            ];
+
+            // 为每个按钮添加点击事件
+            contactButtons.forEach(button => {
+                if (button) { // 确保元素存在
+                    button.addEventListener('click', function(e) {
+                        // ======== 自定义事件代码开始 ========
+                        // 这里是你要插入的事件代码占位符
+                        // insert_event_code_here;
+                        
+                        // 1. Facebook Pixel 追踪事件（保留原有）
+                        fbq('track', 'Contact');
+                        
+                        // 2. 自定义日志（可根据需要修改）
+                        console.log('联系按钮被点击:', this.id);
+                        
+                        // 3. 可添加其他自定义逻辑，例如：
+                        // - 发送数据到后端
+                        // - 显示弹窗
+                        // - 统计点击次数
+                        // - 其他第三方追踪代码
+                        
+                        // ======== 自定义事件代码结束 ========
+
+                        // 如果是跳转到WhatsApp的按钮，保留原有跳转逻辑
+                        if (this.getAttribute('href') && this.getAttribute('href').startsWith('https://wa.me/')) {
+                            // 不阻止默认行为，让链接正常跳转
+                            return;
+                        }
+                    }, false);
+                }
+            });
+        }
+
+        // 页面加载完成后初始化事件监听
+        document.addEventListener('DOMContentLoaded', setupContactButtonEvents);
     </script>
 </body>
 </html>

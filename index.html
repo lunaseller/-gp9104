@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monedas Virtuales en Argentina | Innovación Financiera</title>
+    <meta name="description" content="Descubre el panorama de las monedas virtuales en Argentina: regulaciones, adopción, beneficios y perspectivas futuras.">
+    <!-- Tailwind CSS para estilos (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Configuración de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Paleta de colores inspirada en la bandera argentina + tonos financieros
+                        argentina: {
+                            azul: '#75AADB',
+                            celeste: '#C8E7FF',
+                            blanco: '#FFFFFF',
+                            amarillo: '#FCD116',
+                            gris: '#333333',
+                            grisClaro: '#F5F5F5'
+                        },
+                        whatsapp: {
+                            green: '#25D366',
+                            darkGreen: '#128C7E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .section-padding {
+                padding: clamp(3rem, 8vw, 6rem) 0;
+            }
+            .btn-hover {
+                @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-argentina-grisClaro text-argentina-gris">
+    <!-- Barra de Navegación -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <i class="fa-solid fa-coins text-argentina-azul text-2xl"></i>
+                <span class="font-bold text-xl text-argentina-azul">CryptoArg</span>
+            </a>
+            
+            <!-- Navegación Desktop -->
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="#inicio" class="text-argentina-gris hover:text-argentina-azul transition-colors">Inicio</a>
+                <a href="#beneficios" class="text-argentina-gris hover:text-argentina-azul transition-colors">Beneficios</a>
+                <a href="#regulaciones" class="text-argentina-gris hover:text-argentina-azul transition-colors">Regulaciones</a>
+                <a href="#faq" class="text-argentina-gris hover:text-argentina-azul transition-colors">FAQ</a>
+                <a href="#contacto" class="bg-whatsapp-green text-white px-5 py-2 rounded-lg btn-hover">Contacto WhatsApp</a>
+            </nav>
+            
+            <!-- Botón Menú Móvil -->
+            <button id="menuBtn" class="md:hidden text-argentina-gris text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Navegación Móvil -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-md absolute w-full">
+            <div class="container mx-auto px-4 py-3 flex flex-col gap-4">
+                <a href="#inicio" class="text-argentina-gris hover:text-argentina-azul py-2 border-b border-gray-100">Inicio</a>
+                <a href="#beneficios" class="text-argentina-gris hover:text-argentina-azul py-2 border-b border-gray-100">Beneficios</a>
+                <a href="#regulaciones" class="text-argentina-gris hover:text-argentina-azul py-2 border-b border-gray-100">Regulaciones</a>
+                <a href="#faq" class="text-argentina-gris hover:text-argentina-azul py-2 border-b border-gray-100">FAQ</a>
+                <a href="#contacto" class="bg-whatsapp-green text-white px-5 py-2 rounded-lg text-center btn-hover">Contacto WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="pt-28 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-argentina-celeste to-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+            <div class="md:w-1/2">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-argentina-gris leading-tight text-shadow mb-4">
+                    Monedas Virtuales<br>
+                    <span class="text-argentina-azul">en Argentina</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                    Descubre cómo las criptomonedas están transformando el panorama financiero argentino, ofreciendo alternativas seguras y eficientes en un mercado en constante evolución.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <!-- WhatsApp按钮 -->
+                    <a href="https://wa.me/5491112345678" target="_blank" class="bg-whatsapp-green text-white px-6 py-3 rounded-lg font-medium btn-hover">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> Si estás interesado, contacta mi WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://picsum.photos/id/180/600/400" alt="Monedas virtuales Argentina" class="rounded-lg shadow-xl w-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Beneficios -->
+    <section id="beneficios" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-argentina-gris text-center mb-2">Beneficios de las Monedas Virtuales en Argentina</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">En un contexto económico cambiante, las criptomonedas ofrecen soluciones prácticas para los argentinos</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tarjeta 1 -->
+                <div class="bg-argentina-grisClaro rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-argentina-azul/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-shield-halved text-argentina-azul text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Protección Contra Inflación</h3>
+                    <p class="text-gray-600">
+                        Las criptomonedas actúan como refugio seguro frente a la volatilidad del peso argentino, preservando el valor del patrimonio a largo plazo.
+                    </p>
+                </div>
+                
+                <!-- Tarjeta 2 -->
+                <div class="bg-argentina-grisClaro rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-argentina-azul/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-globe text-argentina-azul text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Transacciones Internacionales</h3>
+                    <p class="text-gray-600">
+                        Envía y recibe dinero del exterior de forma rápida, segura y con comisiones mucho menores que las entidades bancarias tradicionales.
+                    </p>
+                </div>
+                
+                <!-- Tarjeta 3 -->
+                <div class="bg-argentina-grisClaro rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-argentina-azul/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-wallet text-argentina-azul text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Acceso Financiero Inclusivo</h3>
+                    <p class="text-gray-600">
+                        Permite a millones de argentinos sin acceso al sistema bancario tradicional participar en el ecosistema financiero global.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Regulaciones -->
+    <section id="regulaciones" class="section-padding bg-argentina-grisClaro">
+        <div class="container mx-auto px-4">
+            <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-argentina-gris text-center mb-2">Regulaciones Actuales en Argentina</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">El marco legal para las monedas virtuales en Argentina está en constante evolución</p>
+            
+            <div class="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-argentina-azul/10 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-file-contract text-argentina-azul"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1">Resolución BCRA 7.016/2023</h3>
+                            <p class="text-gray-600">
+                                Autoriza a las entidades financieras argentinas a operar con monedas virtuales, regulando su uso como medio de pago y inversión.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-argentina-azul/10 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-money-bill-wave text-argentina-azul"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1">Impuestos sobre Criptomonedas</h3>
+                            <p class="text-gray-600">
+                                Las ganancias por operaciones de criptomonedas están sujetas al Impuesto a las Ganancias y al Impuesto PAIS (30%) para compras extranjeras.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-argentina-azul/10 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-building-columns text-argentina-azul"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1">Supervisión por la CNV</h3>
+                            <p class="text-gray-600">
+                                La Comisión Nacional de Valores supervisa las plataformas de trading de criptomonedas, garantizando la protección de los inversionistas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección FAQ -->
+    <section id="faq" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-argentina-gris text-center mb-2">Preguntas Frecuentes</h2>
+            <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Respuestas a las dudas más comunes sobre las monedas virtuales en Argentina</p>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- Pregunta 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-argentina-grisClaro hover:bg-argentina-celeste/30 transition-colors">
+                        <span class="font-medium">¿Es legal invertir en criptomonedas en Argentina?</span>
+                        <i class="fa-solid fa-chevron-down text-argentina-azul transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-600">
+                            Sí, es completamente legal. La Resolución BCRA 7.016/2023 regulamentó el uso de criptomonedas en Argentina, permitiendo a bancos y entidades financieras operar con ellas. Solo debes asegurarte de operar en plataformas registradas ante la CNV.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-argentina-grisClaro hover:bg-argentina-celeste/30 transition-colors">
+                        <span class="font-medium">¿Cómo declaro mis ganancias de criptomonedas en la AFIP?</span>
+                        <i class="fa-solid fa-chevron-down text-argentina-azul transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-600">
+                            Las ganancias por venta de criptomonedas deben declararse en el Impuesto a las Ganancias (para personas físicas) y en el formulario F931 de la AFIP. Se recomienda llevar un registro detallado de todas las operaciones realizadas durante el año.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-argentina-grisClaro hover:bg-argentina-celeste/30 transition-colors">
+                        <span class="font-medium">¿Qué plataformas son seguras para operar en Argentina?</span>
+                        <i class="fa-solid fa-chevron-down text-argentina-azul transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-600">
+                            Las plataformas registradas ante la CNV como Buenbit, Lemon Cash, Ripio y Binance Argentina son las más seguras. Estas plataformas cumplen con todas las regulaciones argentinas y ofrecen protección al usuario.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-argentina-grisClaro hover:bg-argentina-celeste/30 transition-colors">
+                        <span class="font-medium">¿Puedo usar criptomonedas para pagar en comercios argentinos?</span>
+                        <i class="fa-solid fa-chevron-down text-argentina-azul transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-600">
+                            Sí, un creciente número de comercios en Argentina aceptan criptomonedas como medio de pago, especialmente en sectores como gastronomía, tecnología y servicios. Plataformas como Mercado Pago también permiten convertir criptomonedas a pesos para realizar pagos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto (替换为WhatsApp联系板块) -->
+    <section id="contacto" class="section-padding bg-whatsapp-darkGreen text-white">
+        <div class="container mx-auto px-4">
+            <!-- 替换后的标题和副标题 -->
+            <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-center mb-2">¿Estás interesado en saber más?</h2>
+            <p class="text-white/80 text-center max-w-2xl mx-auto mb-12">Contacta mi WhatsApp para obtener asesoramiento personalizado sobre monedas virtuales en Argentina</p>
+            
+            <!-- 替换为WhatsApp联系卡片 -->
+            <div class="max-w-xl mx-auto bg-white rounded-lg shadow-xl p-8 text-argentina-gris flex flex-col items-center justify-center">
+                <div class="w-24 h-24 bg-whatsapp-green rounded-full flex items-center justify-center mb-6">
+                    <i class="fa-brands fa-whatsapp text-5xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-4 text-whatsapp-darkGreen">Si estás interesado, contacta mi WhatsApp</h3>
+                <p class="text-gray-600 text-center mb-8">
+                    ¡Estoy aquí para resolver todas tus dudas sobre criptomonedas en Argentina!
+                </p>
+                <a href="https://wa.me/5491112345678" target="_blank" class="w-full bg-whatsapp-green text-white py-4 rounded-lg font-medium text-lg btn-hover flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    Enviar mensaje por WhatsApp
+                </a>
+                <p class="text-gray-500 text-sm text-center mt-4">
+                    Número: +54 9 11 1234-5678
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-argentina-gris text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-coins text-argentina-azul text-xl"></i>
+                    <span class="font-bold text-xl">CryptoArg</span>
+                </div>
+                
+                <div class="flex gap-6">
+                    <a href="#" class="text-white/70 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="text-white/70 hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="text-white/70 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-white/70 hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/5491112345678" target="_blank" class="text-white/70 hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+                
+                <div class="text-white/70 text-sm">
+                    © 2025 CryptoArg. Todos los derechos reservados.
+                </div>
+            </div>
+            
+            <div class="mt-6 text-center text-white/50 text-sm">
+                Información educativa - No constituye asesoramiento financiero. Invierta con responsabilidad.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Menú móvil
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Cambiar icono
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+        
+        // FAQ Toggle
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                // Toggle contenido
+                content.classList.toggle('hidden');
+                
+                // Rotar icono
+                icon.classList.toggle('rotate-180');
+                
+                // Cerrar otros FAQs
+                faqToggles.forEach(otherToggle => {
+                    if (otherToggle !== toggle) {
+                        otherToggle.nextElementSibling.classList.add('hidden');
+                        otherToggle.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+        
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Cerrar menú móvil si está abierto
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuBtn.querySelector('i').classList.remove('fa-times');
+                        menuBtn.querySelector('i').classList.add('fa-bars');
+                    }
+                }
+            });
+        });
+        
+        // Efecto de scroll para navbar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-3');
+            } else {
+                header.classList.add('py-3');
+                header.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
